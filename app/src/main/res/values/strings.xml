@@ -2,7 +2,8 @@
 <resources>
 
     <string name="app_name">Buoy</string>
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="edit_message">Entrez un texte...</string>
+    <string name="button_send">ENVOYEEER</string>
 
 </resources>
