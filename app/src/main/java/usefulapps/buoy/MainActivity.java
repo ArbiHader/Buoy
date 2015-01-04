@@ -1,12 +1,19 @@
 package usefulapps.buoy;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
+import android.widget.EditText;
 
 
 public class MainActivity extends ActionBarActivity {
+
+    public final static String EXTRA_MESSAGE = "com.usefulapps.MESSAGE";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +37,35 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch( id ){
+            case R.id.action_settings:
+                break;
+            case R.id.action_page1:
+                break;
+            case R.id.action_page2:
+                break;
+            case R.id.action_page3:
+                break;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    /** Called when the user clicks the Send button */
+    public void sendMessage(View view) {
+        //Create the intent
+        Intent intent = new Intent(this, DisplayMessageActivity.class);
+
+        //Get the view tappped
+        EditText editText = (EditText) findViewById(R.id.edit_message);
+
+        //Pass the edit text message to the intent
+        intent.putExtra(EXTRA_MESSAGE, editText.getText().toString());
+
+        //start the target activity
+        startActivity(intent);
+    }
+
+
+
 }
